@@ -25,19 +25,19 @@ def get_solutions(directory: str, test: bool = False) -> dict:
     If test is True, it only returns the test solutions for the first day."""
 
     if test:
-        data_paths = (directory + "day1a.txt",)
+        data_paths = [directory + "day1a.txt"]
     else:
-        data_paths = (directory + file for file in listdir(directory))
+        data_paths = [directory + file for file in listdir(directory)]
 
+    modules = get_modules(aoc24, "day", test)
     solutions = {}
 
-    for module in get_modules(aoc24, "day", test):
-        parts = get_modules(module, "part", test=False)
+    for i in range(len(modules)):
+        parts = get_modules(modules[i], "part", test=False)
 
-        for data_path in data_paths:
-            solutions[data_path] = (
-                parts[0](data_path),
-                parts[1](data_path),
-            )
+        solutions[data_paths[i]] = (
+            parts[0](data_paths[i]),
+            parts[1](data_paths[i]),
+        )
 
     return solutions
