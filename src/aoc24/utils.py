@@ -26,6 +26,7 @@ def get_solutions(directory: str, test: bool = False) -> dict:
 
     if test:
         data_paths = [directory + "day1a.txt"]
+
     else:
         data_paths = [directory + file for file in listdir(directory)]
 

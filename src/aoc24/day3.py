@@ -1,3 +1,6 @@
+"--- Day 3: Mull It Over ---"
+
+
 import re
 
 
@@ -24,7 +27,6 @@ def part2(data_path: str) -> int:
     total = 0
 
     for instruction in instructions:
-
         if "do(" in instruction:
             enabled = True
         elif "don" in instruction:
