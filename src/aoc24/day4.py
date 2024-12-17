@@ -1,3 +1,6 @@
+"--- Day 4: Ceres Search ---"
+
+
 def search_perimeter(character: str, coordinates: tuple, grid: list) -> dict:
     x, y = coordinates
     positions = []
